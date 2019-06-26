@@ -4,7 +4,38 @@
 <meta charset="utf-8">
   <title>React Practice</title>
 <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
   </head>
   <body>
+    <div id="root"></div>
+    <script type="text/babel">
+    (() => {
+
+      // function Counter() {
+        // return <div>0</div>;
+      // }
+
+      function Counter(props) {
+        return <li style={{backgroundColor:props.color}}>0{props.color}</li>;
+      }
+
+
+      ReactDOM.render (
+        <div className="container">
+        <ul>
+        <Counter color="tomato"/>
+        <Counter color="skyblue"/>
+        <Counter color="limegreen"/>
+        </ul>
+        </div>,
+        document.getElementById('root')
+
+      );
+    })();
+    </script>
     </body>
     </html>
